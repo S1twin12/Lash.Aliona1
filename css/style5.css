@@ -1,0 +1,335 @@
+/* Подключение премиальных шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  background: #2d2d2d;
+  color: #e0e0e0;
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  padding: 15px 0;
+  position: relative;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #404040;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #d8a7b1;
+  letter-spacing: 0.05em;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 2000;
+  background: transparent;
+  border: none;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #d8a7b1;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  font-family: 'Montserrat', sans-serif;
+  color: #d8a7b1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d8a7b1;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #e0e0e0;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Main */
+main {
+  padding: 100px 20px 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: #d8a7b1;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.contact-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-top: 25px;
+  color: #d8a7b1;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-link,
+.vk-link {
+  color: #d8a7b1;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contact-link:hover,
+.vk-link:hover {
+  color: #e0e0e0;
+}
+
+.contact-link::after,
+.vk-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d8a7b1;
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover::after,
+.vk-link:hover::after {
+  width: 100%;
+}
+
+.vk-logo {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.vk-link:hover .vk-logo {
+  filter: brightness(1);
+}
+
+.map-container {
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #404040;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+  border-top: 1px solid #404040;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+    display: none;
+    padding: 20px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #404040;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.8rem 0;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  main {
+    padding: 90px 15px 30px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 80px 10px 20px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .menu-toggle {
+    left: 15px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Дополнительные улучшения */
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Выделение текста */
+::selection {
+  background: rgba(216, 167, 177, 0.3);
+  color: #e0e0e0;
+}
+
+::-moz-selection {
+  background: rgba(216, 167, 177, 0.3);
+  color: #e0e0e0;
+}
+
+/* Предотвращение масштабирования при двойном тапе на iOS */
+@media (max-width: 768px) {
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Улучшение доступности */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

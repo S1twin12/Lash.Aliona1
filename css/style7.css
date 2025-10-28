@@ -1,0 +1,358 @@
+/* Подключение премиальных шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+/* ===== Сброс и базовые стили ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Хедер и бургер меню ===== */
+header {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #404040;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-menu li a {
+  font-family: 'Montserrat', sans-serif;
+  color: #d8a7b1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d8a7b1;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #e0e0e0;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  background: transparent;
+  border: none;
+  padding: 8px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #d8a7b1;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== Основной контент ===== */
+main {
+  flex: 1;
+  padding: 100px 20px 40px;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #d8a7b1;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #d8a7b1;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+ul li {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #a16076 0%, #8e4c63 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(161, 96, 118, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #8e4c63 0%, #a16076 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(161, 96, 118, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ===== Футер ===== */
+footer {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: auto;
+  border-top: 1px solid #404040;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+/* ===== Мобильная версия ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #404040;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.8rem 0;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  main {
+    padding: 90px 15px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 80px 10px 20px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    left: 15px;
+    top: 12px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Дополнительные улучшения */
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Выделение текста */
+::selection {
+  background: rgba(216, 167, 177, 0.3);
+  color: #e0e0e0;
+}
+
+::-moz-selection {
+  background: rgba(216, 167, 177, 0.3);
+  color: #e0e0e0;
+}
+
+/* Предотвращение масштабирования при двойном тапе на iOS */
+@media (max-width: 768px) {
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Улучшение доступности */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Анимации для плавного появления */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

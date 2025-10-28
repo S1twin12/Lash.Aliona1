@@ -1,0 +1,437 @@
+/* Подключение премиальных шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Базовые стили */
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Шапка === */
+header {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  padding: 40px 0;
+  position: relative;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #404040;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Меню-бургер */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  padding: 8px;
+}
+
+.menu-toggle .bar {
+  background-color: #d8a7b1;
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Навигация */
+.navbar {
+  width: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  font-family: 'Montserrat', sans-serif;
+  color: #d8a7b1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d8a7b1;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #e0e0e0;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* === Основной контент === */
+main {
+  margin-top: 140px;
+  padding: 0 20px;
+}
+
+.services {
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #d8a7b1;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+#lamination,
+#extensions {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  padding: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #404040;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#lamination::before,
+#extensions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #d8a7b1, #a16076);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+#lamination:hover::before,
+#extensions:hover::before {
+  transform: scaleX(1);
+}
+
+#lamination:hover,
+#extensions:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+#lamination h3,
+#extensions h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #d8a7b1;
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+#lamination ul,
+#extensions ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+#lamination ul li,
+#extensions ul li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  margin-bottom: 12px;
+  font-weight: 300;
+  color: #cccccc;
+  padding: 8px 0;
+  border-bottom: 1px solid #404040;
+  transition: color 0.3s ease;
+}
+
+#lamination ul li:hover,
+#extensions ul li:hover {
+  color: #e0e0e0;
+}
+
+#lamination ul li:last-child,
+#extensions ul li:last-child {
+  border-bottom: none;
+}
+
+#lamination a,
+#extensions a {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #a16076 0%, #8e4c63 100%);
+  color: white;
+  padding: clamp(0.9rem, 2.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(161, 96, 118, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+#lamination a::before,
+#extensions a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+#lamination a:hover::before,
+#extensions a:hover::before {
+  left: 100%;
+}
+
+#lamination a:hover,
+#extensions a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(161, 96, 118, 0.4);
+}
+
+#lamination a:active,
+#extensions a:active {
+  transform: translateY(0);
+}
+
+/* === Подвал === */
+footer {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
+  text-align: center;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  margin-top: 60px;
+  border-top: 1px solid #404040;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: 300;
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+/* Адаптация меню */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #404040;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    font-size: 1.1rem;
+    width: 100%;
+    display: block;
+    padding: 0.8rem 0;
+  }
+}
+
+/* Адаптация основного контента */
+@media (max-width: 768px) {
+  main {
+    margin-top: 120px;
+    padding: 0 15px;
+  }
+
+  .services {
+    padding: 20px;
+  }
+
+  .services h2 {
+    font-size: 1.8rem;
+  }
+
+  #lamination,
+  #extensions {
+    padding: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  #lamination h3,
+  #extensions h3 {
+    font-size: 1.4rem;
+  }
+
+  #lamination a,
+  #extensions a {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin-top: 100px;
+    padding: 0 10px;
+  }
+
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .menu-toggle {
+    left: 15px;
+    top: -15px;
+  }
+
+  .services {
+    padding: 15px;
+  }
+
+  #lamination,
+  #extensions {
+    padding: 1.2rem;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding: 1.5rem 0;
+  }
+}
+
+/* Дополнительные улучшения */
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Выделение текста */
+::selection {
+  background: rgba(216, 167, 177, 0.3);
+  color: #e0e0e0;
+}
+
+::-moz-selection {
+  background: rgba(216, 167, 177, 0.3);
+  color: #e0e0e0;
+}
+
+/* Предотвращение масштабирования при двойном тапе на iOS */
+@media (max-width: 768px) {
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Улучшение читаемости на маленьких экранах */
+@media (max-width: 360px) {
+  .services h2 {
+    font-size: 1.6rem;
+  }
+
+  #lamination h3,
+  #extensions h3 {
+    font-size: 1.3rem;
+  }
+
+  .nav-menu li a {
+    font-size: 1rem;
+  }
+}
